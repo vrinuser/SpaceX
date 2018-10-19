@@ -57,9 +57,7 @@ class ListViewController: UIViewController {
                         } else {
                             
                         }
-                        
-                
-                        
+                   
                     }
                     
                     print(self.arrSpace)
@@ -144,7 +142,7 @@ extension ListViewController: UITableViewDelegate,UITableViewDataSource {
             self.seletedName = NSMutableString()
             for i in stride(from: 0, to: self.arrTemp.count, by: 1){
                 let strName =  ((arrTemp.object(at: i) as? NSDictionary)?.value(forKey: "name") as? String)
-              //  let strName =  ((((arrSpace[i] as? NSDictionary)?.value(forKey: "missions") as? NSArray)?.object(at: 0) as? NSDictionary)?.value(forKey: "name") as? String)
+             
                 self.seletedName.append(strName!)
                 self.seletedName.append(",")
             }
@@ -162,21 +160,7 @@ extension ListViewController: UITableViewDelegate,UITableViewDataSource {
         } else {
               cell.lblName.attributedText =  self.setAttributedStringWithBLueColor(str: String(format: "Missions %@%@"," :- ",""))
         }
-        
-        
-//        if (((arrSpace[indexPath.row] as? NSDictionary)?.value(forKey: "missions") as? NSArray)?.count)! > 0 {
-//
-//            if let strName =  ((((arrSpace[indexPath.row] as? NSDictionary)?.value(forKey: "missions") as? NSArray)?.object(at: 0) as? NSDictionary)?.value(forKey: "name") as? String){
-//
-//
-//                cell.lblName.attributedText =  self.setAttributedStringWithBLueColor(str: String(format: "Missions %@%@"," :- ",strName ))
-//
-//            } else  {
-//                   cell.lblName.attributedText =  self.setAttributedStringWithBLueColor(str: String(format: "Missions %@%@"," :- ","" ))
-//            }
-//        }
-        
-        
+      
         if let strLanding = (arrSpace[indexPath.row] as? NSDictionary)?.value(forKey:"landings") as? NSNumber{
             
             cell.lblLanding.attributedText =   self.setAttributedStringWithBLueColor(str: String(format: "Number of landings %@%@"," :- ",strLanding ))
