@@ -83,6 +83,7 @@ class ListViewController: UIViewController {
         }
     
     }
+    
     //MARK:- SetNavigation
     func setupNavigationBar (){
         UIApplication.shared.statusBarStyle = .lightContent
